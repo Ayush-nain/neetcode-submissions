@@ -1,13 +1,12 @@
 class Solution {
-    public boolean hasDuplicate(int[] nums) 
+    public int[] getConcatenation(int[] nums) 
     {
-        HashSet<Integer> hset=new HashSet<>();
-        for(int i=0;i<nums.length;i++)
+        int ans[]=new int[nums.length*2];
+        for(int i=0;i<nums.length;i++)  
         {
-            if(hset.contains(nums[i]))
-              return true;
-            hset.add(nums[i]);
-        }        
-        return false;
+            ans[i]=nums[i];
+            ans[nums.length+i]=nums[i];
+        }
+        return ans;
     }
 }
